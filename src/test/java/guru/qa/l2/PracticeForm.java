@@ -2,6 +2,7 @@ package guru.qa.l2;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
+import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 
@@ -23,9 +24,12 @@ public class PracticeForm {
 
     }
 
+
     @Test
     void txtForm() {
         open("https://demoqa.com/automation-practice-form");
+        executeJavaScript("$('#fixedban').remove()");
+        executeJavaScript("$('footer').remove()");
         $("#firstName").setValue("firstName");
         $("#lastName").setValue("lastName");
         $("#userEmail").setValue("aaa@bbb.cc");
@@ -36,15 +40,15 @@ public class PracticeForm {
         $("#dateOfBirthInput").click();
         $(".react-datepicker__month-select").selectOption("July");
         $(".react-datepicker__year-select").selectOptionByValue("2022");
-        $(".react-datepicker__day--027:not(react-datepicker__day--outside-month)") .click();
+        $(".react-datepicker__day--027:not(react-datepicker__day--outside-month)").click();
 
 
         $("#subjectsInput").setValue("Chemistry").pressEnter();
 
         $("#hobbiesWrapper").$(byText("Reading")).click();
 
-       File picture = new File("src/test/resources/img/picture.png");
-       $("#uploadPicture").uploadFile(picture);
+
+        $("#uploadPicture").uploadFromClasspath("img/picture.png");
 
         $("#currentAddress").setValue("Russia");
 
@@ -60,7 +64,10 @@ public class PracticeForm {
 
         $(".modal-dialog").should(Condition.appear);
         $("#example-modal-sizes-title-lg").shouldHave(text("Thanks for submitting the form"));
-        $(".table-responsive").shouldHave(text("firstName"),text("lastName"),text("aaa@bbb.cc"));
+        $(".table-responsive").shouldHave(text("firstName"), text("lastName"), text("aaa@bbb.cc"), text("1234567890"),
+                text("Male"), text("27 June,2022"), text("Chemistry"), text("Reading"), text("picture.png"), text("Russia"), text("Uttar Pradesh Agra"));
+        $(".modal-dialog").shouldBe(Condition.visible);
+
     }
 
 
