@@ -2,12 +2,8 @@ package guru.qa.l2;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
-import jdk.jfr.Description;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
-
-import java.io.File;
-
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
@@ -16,14 +12,10 @@ public class PracticeForm {
 
     @BeforeAll
     public static void setUpAll() {
-
         Configuration.browserSize = "1920x1800";
         Configuration.pageLoadStrategy = "eager";
         Configuration.browser = "chrome";
-        Configuration.holdBrowserOpen = true;
-
     }
-
     @Test
     void txtForm() {
         open("https://demoqa.com/automation-practice-form");
