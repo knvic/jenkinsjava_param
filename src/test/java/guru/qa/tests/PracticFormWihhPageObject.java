@@ -17,7 +17,20 @@ public class PracticFormWihhPageObject extends BaseTest{
                 .setUserEmail("aaa@bbb.cc")
                 .setUserNumber("1234567890")
                 .setGender("Female")
-                .setGenderMale().setBirth("2022","July","27") ;
+                .setGenderMale().setBirth("2022","July","27")
+                .setSubjects("Chemistry")
+                .setHobbies("Reading")
+                .uploadPicture("img/picture.png")
+                .setCurrentAddress("Russia")
+                .deletefooer()
+                .setStateAndCity("Uttar Pradesh","Agra")
+                .submit()
+                .checkModalDialogeTitle("Thanks for submitting the form")
+                .checkResult("firstName","lastName",
+                        "aaa@bbb.cc","1234567890","Male",
+                        "27 July,2022","Chemistry","Reading",
+                        "picture.png","Russia",
+                        "Uttar Pradesh Agra");
 
 
 
