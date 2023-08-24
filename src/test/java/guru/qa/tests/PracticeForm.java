@@ -1,4 +1,4 @@
-package guru.qa.l2;
+package guru.qa.tests;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.Configuration;
@@ -12,15 +12,13 @@ public class PracticeForm {
 
     @BeforeAll
     public static void setUpAll() {
-        Configuration.browserSize = "1920x1800";
-        Configuration.pageLoadStrategy = "eager";
-        Configuration.browser = "chrome";
+        //-Dwdm.chromeDriverVersion=114.0.5735.90
+
     }
     @Test
     void txtForm() {
         open("https://demoqa.com/automation-practice-form");
-        executeJavaScript("$('#fixedban').remove()");
-        executeJavaScript("$('footer').remove()");
+
         $("#firstName").setValue("firstName");
         $("#lastName").setValue("lastName");
         $("#userEmail").setValue("aaa@bbb.cc");
