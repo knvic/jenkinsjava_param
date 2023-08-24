@@ -1,9 +1,10 @@
 package guru.qa.tests;
 
+
 import guru.qa.pages.TextBoxTestsPage;
 import org.junit.jupiter.api.Test;
 
-public class TextBoxTestsWithPageObject extends BaseTest{
+public class TextBoxWithPageObjectTests extends BaseTest{
 
 
     TextBoxTestsPage textBoxTestsPage =new TextBoxTestsPage();
@@ -14,18 +15,18 @@ public class TextBoxTestsWithPageObject extends BaseTest{
       /* Ввода данных*/
         textBoxTestsPage
                 .openPage()
-                .setuserName("Alex Egorov")
-                .setuserEmail("alex@egorov.com")
+                .setUserName("Alex Egorov")
+                .setUserEmail("alex@egorov.com")
                 .setAddress("Some address 1")
-                .setpermanentAddress("Another address 1")
+                .setPermanentAddress("Another address 1")
                 .submit();
 
         /* Проверка результата*/
         textBoxTestsPage
-                .outputname("Alex Egorov")
-                .outputemail("alex@egorov.com")
-                .outputcurrentAddress("Some address 1")
-                .outputermanentAddress("Another address 1");
+                .outputName("Alex Egorov")
+                .outputEmail("alex@egorov.com")
+                .outputCurrentAddress("Some address 1")
+                .outputPermanentAddress("Another address 1");
     }
 
 

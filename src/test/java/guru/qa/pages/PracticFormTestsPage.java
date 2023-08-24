@@ -2,21 +2,24 @@ package guru.qa.pages;
 
 import com.codeborne.selenide.Condition;
 import com.codeborne.selenide.SelenideElement;
-import guru.qa.pages.components.Calendar;
+import guru.qa.pages.components.CalendarComponent;
+import guru.qa.pages.components.ResultTableComponent;
+
+import java.util.List;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticFormPage {
+public class PracticFormTestsPage {
 
-    Calendar calendar = new Calendar();
+    CalendarComponent calendar = new CalendarComponent();
+    ResultTableComponent resultTableComponent=new ResultTableComponent();
     SelenideElement
             firstName = $("#firstName"),
             lastName = $("#lastName"),
             userEmail = $("#userEmail"),
             userNumber = $("#userNumber"),
-            genderMale = $("#gender-radio-1"),
             gender = $("#genterWrapper"),
             birthDate = $("#dateOfBirthInput"),
             subjects = $("#subjectsInput"),
@@ -27,82 +30,76 @@ public class PracticFormPage {
             stateCity = $("#stateCity-wrapper"),
             clickCity = $("#city"),
             submit = $("#submit"),
-            modaldialog = $(".modal-dialog"),
-            CheckTitle = $("#example-modal-sizes-title-lg"),
-            checkInputData = $(".table-responsive");
+            modalDialog = $(".modal-dialog"),
+            checkTitle = $("#example-modal-sizes-title-lg");
 
 
-    public PracticFormPage openPage() {
-        //open("https://demoqa.com/automation-practice-form");
-        open("/automation-practice-form");
+
+    public PracticFormTestsPage openPage() {
+               open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public PracticFormPage setFirstName(String value) {
+    public PracticFormTestsPage setFirstName(String value) {
         firstName.setValue(value);
         return this;
     }
 
-    public PracticFormPage setLastName(String value) {
+    public PracticFormTestsPage setLastName(String value) {
         lastName.setValue(value);
         return this;
     }
 
-    public PracticFormPage setUserEmail(String value) {
+    public PracticFormTestsPage setUserEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
-    public PracticFormPage setGender(String value) {
+    public PracticFormTestsPage setGender(String value) {
         gender.$(byText(value)).click();
         return this;
     }
 
-    public PracticFormPage setGenderMale() {
-        genderMale.parent().click();
-        return this;
-    }
-
-
-    public PracticFormPage setUserNumber(String value) {
+        public PracticFormTestsPage setUserNumber(String value) {
         userNumber.setValue(value);
         return this;
     }
 
-    public PracticFormPage setBirth(String year, String month, String day) {
+    public PracticFormTestsPage setBirth(String year, String month, String day) {
         birthDate.click();
         calendar.setDate(year, month, day);
         return this;
     }
 
-    public PracticFormPage setSubjects(String value) {
+    public PracticFormTestsPage setSubjects(String value) {
         subjects.setValue(value).pressEnter();
         return this;
     }
 
-    public PracticFormPage setHobbies(String value) {
+    public PracticFormTestsPage setHobbies(String value) {
         hobbies.$(byText(value)).click();
         return this;
     }
 
-    public PracticFormPage uploadPicture(String filename) {
+    public PracticFormTestsPage uploadPicture(String filename) {
         uploadPic.uploadFromClasspath(filename);
         return this;
     }
 
-    public PracticFormPage setCurrentAddress(String value) {
+    public PracticFormTestsPage setCurrentAddress(String value) {
         currentAddress.setValue(value);
         return this;
     }
 
-    public PracticFormPage deletefooer() {
+    public PracticFormTestsPage deleteBannerAndFooter() {
+        executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public PracticFormPage setStateAndCity(String state, String city) {
+    public PracticFormTestsPage setStateAndCity(String state, String city) {
         clickState.click();
         stateCity.$(byText(state)).click();
         clickCity.click();
@@ -110,19 +107,22 @@ public class PracticFormPage {
         return this;
     }
 
-    public PracticFormPage submit() {
+    public PracticFormTestsPage submit() {
         submit.click();
         return this;
     }
 
-    public PracticFormPage checkModalDialogeTitle(String value) {
-        modaldialog.should(Condition.appear);
-        CheckTitle.shouldHave(text(value));
+    public PracticFormTestsPage checkModalDialogeTitle(String value) {
+        modalDialog.should(Condition.appear);
+        checkTitle.shouldHave(text(value));
         return this;
     }
-    public PracticFormPage checkResult(String firstName,String lastName,String mail,String tel,String gen,String date,String f,String hob,String upload,String addr,String stateCity) {
-        checkInputData.shouldHave(text(firstName), text(lastName), text(mail), text(tel),
-                text(gen), text(date), text(f), text(hob), text(upload), text(addr), text(stateCity));
+
+
+    public PracticFormTestsPage checkResult(List<String> list) {
+        for (String item : list) {
+            resultTableComponent.checkResult(item);
+        }
 
         return this;
     }
