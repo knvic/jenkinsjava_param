@@ -33,7 +33,8 @@ public class PracticFormPage {
 
 
     public PracticFormPage openPage() {
-        open("https://demoqa.com/automation-practice-form");
+        //open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
