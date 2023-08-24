@@ -8,9 +8,8 @@ public class BaseTest {
 
     @BeforeAll
     static void beforeAll() {
-        /*System.setProperty("webdriver.chrome.driver", "C:\\QA\\chromedriver-win64\\chromedriver-win64_116\\chromedriver.exe");
-        System.setProperty("selenide.browser", "Chrome");*/
-
+        System.setProperty("webdriver.chrome.driver", "C:\\QA\\chromedriver-win64\\chromedriver-win64_116\\chromedriver.exe");
+        System.setProperty("selenide.browser", "Chrome");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1800";
         Configuration.pageLoadStrategy = "eager";

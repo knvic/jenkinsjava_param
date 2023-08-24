@@ -12,13 +12,13 @@ public class TextBoxTestsPage {
     SelenideElement
             userName = $("#userName"),
             userEmail = $("#userEmail"),
-            adress = $("#currentAddress"),
+            address = $("#currentAddress"),
             permanentAddress = $("#permanentAddress"),
             submit = $("#submit"),
-            outputname = $("#output #name"),
-            outputemail = $("#output #email"),
-            outputcurrentAddress = $("#output #currentAddress"),
-            outputermanentAddress = $("#output #permanentAddress");
+            outputName = $("#output #name"),
+            outputEmail = $("#output #email"),
+            outputCurrentAddress = $("#output #currentAddress"),
+            outputPermanentAddress = $("#output #permanentAddress");
 
 
 
@@ -28,22 +28,22 @@ public class TextBoxTestsPage {
         return this;
     }
 
-    public TextBoxTestsPage setuserName(String value) {
+    public TextBoxTestsPage setUserName(String value) {
         userName.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage setuserEmail(String value) {
+    public TextBoxTestsPage setUserEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
     public TextBoxTestsPage setAddress(String value) {
-        adress.setValue(value);
+        address.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage setpermanentAddress(String value) {
+    public TextBoxTestsPage setPermanentAddress(String value) {
         permanentAddress.setValue(value);
         return this;
     }
@@ -53,23 +53,23 @@ public class TextBoxTestsPage {
         return this;
     }
 
-    public TextBoxTestsPage outputname(String value) {
-        outputname.shouldHave(text(value));
+    public TextBoxTestsPage outputName(String value) {
+        outputName.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputemail(String value) {
-        outputemail.shouldHave(text(value));
+    public TextBoxTestsPage outputEmail(String value) {
+        outputEmail.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputcurrentAddress(String value) {
-        outputcurrentAddress.shouldHave(text(value));
+    public TextBoxTestsPage outputCurrentAddress(String value) {
+        outputCurrentAddress.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputermanentAddress(String value) {
-        outputermanentAddress.shouldHave(text(value));
+    public TextBoxTestsPage outputPermanentAddress(String value) {
+        outputPermanentAddress.shouldHave(text(value));
         return this;
     }
 
