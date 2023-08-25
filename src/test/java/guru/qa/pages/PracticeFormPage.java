@@ -11,7 +11,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticFormTestsPage {
+public class PracticeFormPage {
 
     CalendarComponent calendar = new CalendarComponent();
     ResultTableComponent resultTableComponent=new ResultTableComponent();
@@ -35,71 +35,71 @@ public class PracticFormTestsPage {
 
 
 
-    public PracticFormTestsPage openPage() {
+    public PracticeFormPage openPage() {
                open("/automation-practice-form");
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public PracticFormTestsPage setFirstName(String value) {
+    public PracticeFormPage setFirstName(String value) {
         firstName.setValue(value);
         return this;
     }
 
-    public PracticFormTestsPage setLastName(String value) {
+    public PracticeFormPage setLastName(String value) {
         lastName.setValue(value);
         return this;
     }
 
-    public PracticFormTestsPage setUserEmail(String value) {
+    public PracticeFormPage setUserEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
-    public PracticFormTestsPage setGender(String value) {
+    public PracticeFormPage setGender(String value) {
         gender.$(byText(value)).click();
         return this;
     }
 
-        public PracticFormTestsPage setUserNumber(String value) {
+        public PracticeFormPage setUserNumber(String value) {
         userNumber.setValue(value);
         return this;
     }
 
-    public PracticFormTestsPage setBirth(String year, String month, String day) {
+    public PracticeFormPage setBirth(String year, String month, String day) {
         birthDate.click();
         calendar.setDate(year, month, day);
         return this;
     }
 
-    public PracticFormTestsPage setSubjects(String value) {
+    public PracticeFormPage setSubjects(String value) {
         subjects.setValue(value).pressEnter();
         return this;
     }
 
-    public PracticFormTestsPage setHobbies(String value) {
+    public PracticeFormPage setHobbies(String value) {
         hobbies.$(byText(value)).click();
         return this;
     }
 
-    public PracticFormTestsPage uploadPicture(String filename) {
+    public PracticeFormPage uploadPicture(String filename) {
         uploadPic.uploadFromClasspath(filename);
         return this;
     }
 
-    public PracticFormTestsPage setCurrentAddress(String value) {
+    public PracticeFormPage setCurrentAddress(String value) {
         currentAddress.setValue(value);
         return this;
     }
 
-    public PracticFormTestsPage deleteBannerAndFooter() {
+    public PracticeFormPage deleteBannerAndFooter() {
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
     }
 
-    public PracticFormTestsPage setStateAndCity(String state, String city) {
+    public PracticeFormPage setStateAndCity(String state, String city) {
         clickState.click();
         stateCity.$(byText(state)).click();
         clickCity.click();
@@ -107,19 +107,19 @@ public class PracticFormTestsPage {
         return this;
     }
 
-    public PracticFormTestsPage submit() {
+    public PracticeFormPage submit() {
         submit.click();
         return this;
     }
 
-    public PracticFormTestsPage checkModalDialogeTitle(String value) {
+    public PracticeFormPage checkModalDialogeTitle(String value) {
         modalDialog.should(Condition.appear);
         checkTitle.shouldHave(text(value));
         return this;
     }
 
 
-    public PracticFormTestsPage checkResult(List<String> list) {
+    public PracticeFormPage checkResult(List<String> list) {
         for (String item : list) {
             resultTableComponent.checkResult(item);
         }

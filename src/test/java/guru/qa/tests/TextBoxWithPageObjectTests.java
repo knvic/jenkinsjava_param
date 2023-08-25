@@ -1,13 +1,13 @@
 package guru.qa.tests;
 
 
-import guru.qa.pages.TextBoxTestsPage;
+import guru.qa.pages.TextBoxPage;
 import org.junit.jupiter.api.Test;
 
 public class TextBoxWithPageObjectTests extends BaseTest{
 
 
-    TextBoxTestsPage textBoxTestsPage =new TextBoxTestsPage();
+    TextBoxPage textBoxTestsPage =new TextBoxPage();
 
     @Test
     void extBoxTestsWithPageObject() {

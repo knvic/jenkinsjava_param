@@ -1,17 +1,17 @@
 package guru.qa.tests;
 
-import guru.qa.pages.PracticFormTestsPage;
+import guru.qa.pages.PracticeFormPage;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
 import static com.codeborne.selenide.Selenide.$;
 
-public class PracticFormWithPageObjectTests extends BaseTest {
-    PracticFormTestsPage practicFormPage = new PracticFormTestsPage();
+public class PracticeFormWithPageObjectTests extends BaseTest {
+    PracticeFormPage practicFormPage = new PracticeFormPage();
 
     @Test
-    void name() {
+    void fullTestPracticeForm() {
         practicFormPage.openPage()
                 .deleteBannerAndFooter()
                 .setFirstName("firstName")
@@ -31,7 +31,7 @@ public class PracticFormWithPageObjectTests extends BaseTest {
 
 
                 .checkResult(List.of("firstName", "lastName",
-                        "aaa@bbb.cc", "1234567890", "Male",
+                        "aaa@bbb.cc", "1234567890", "Female",
                         "27 July,2022", "Chemistry", "Reading",
                         "picture.png", "Russia",
                         "Uttar Pradesh Agra"));

@@ -6,7 +6,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoxTestsPage {
+public class TextBoxPage {
 
 
     SelenideElement
@@ -23,52 +23,52 @@ public class TextBoxTestsPage {
 
 
 
-    public TextBoxTestsPage openPage() {
+    public TextBoxPage openPage() {
         open("/text-box");
         return this;
     }
 
-    public TextBoxTestsPage setUserName(String value) {
+    public TextBoxPage setUserName(String value) {
         userName.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage setUserEmail(String value) {
+    public TextBoxPage setUserEmail(String value) {
         userEmail.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage setAddress(String value) {
+    public TextBoxPage setAddress(String value) {
         address.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage setPermanentAddress(String value) {
+    public TextBoxPage setPermanentAddress(String value) {
         permanentAddress.setValue(value);
         return this;
     }
 
-    public TextBoxTestsPage submit() {
+    public TextBoxPage submit() {
         submit.click();
         return this;
     }
 
-    public TextBoxTestsPage outputName(String value) {
+    public TextBoxPage outputName(String value) {
         outputName.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputEmail(String value) {
+    public TextBoxPage outputEmail(String value) {
         outputEmail.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputCurrentAddress(String value) {
+    public TextBoxPage outputCurrentAddress(String value) {
         outputCurrentAddress.shouldHave(text(value));
         return this;
     }
 
-    public TextBoxTestsPage outputPermanentAddress(String value) {
+    public TextBoxPage outputPermanentAddress(String value) {
         outputPermanentAddress.shouldHave(text(value));
         return this;
     }
