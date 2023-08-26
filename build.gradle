@@ -25,7 +25,11 @@ dependencies {
     testImplementation('org.slf4j:slf4j-simple:2.0.5')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
-    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine:${junitVersion}")
+    testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine: ${junitVersion}")
+
+
+    implementation group: 'net.datafaker', name: 'datafaker', version: '2.0.1'
+
 }
 
 test {

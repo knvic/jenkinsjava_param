@@ -7,7 +7,7 @@ import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
-public class PracticeFormTests {
+public class PracticeFormTests extends BaseTest{
 
     @BeforeAll
     public static void setUpAll() {
@@ -16,7 +16,7 @@ public class PracticeFormTests {
     }
     @Test
     void txtForm() {
-        open("https://demoqa.com/automation-practice-form");
+        open("/automation-practice-form");
 
         $("#firstName").setValue("firstName");
         $("#lastName").setValue("lastName");
