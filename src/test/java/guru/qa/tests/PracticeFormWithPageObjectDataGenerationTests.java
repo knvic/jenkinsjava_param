@@ -3,7 +3,6 @@ package guru.qa.tests;
 import guru.qa.pages.PracticeFormPage;
 import guru.qa.utils.DataGenerationUtils;
 import org.junit.jupiter.api.DisplayName;
-import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -13,7 +12,7 @@ import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
 public class PracticeFormWithPageObjectDataGenerationTests extends BaseTest {
-    PracticeFormPage practicFormPage = new PracticeFormPage();
+    PracticeFormPage practiceFormPage = new PracticeFormPage();
     DataGenerationUtils dataGenerationUtils = new DataGenerationUtils();
 
     @Test
@@ -38,13 +37,13 @@ public class PracticeFormWithPageObjectDataGenerationTests extends BaseTest {
                 city = dataGenerationUtils.getUserCity(state);
 
         step("Открытие формы, удаление банера и футера", () -> {
-            practicFormPage
+            practiceFormPage
                     .openPage()
                     .deleteBannerAndFooter();
         });
 
         step("Заполнение формы", () -> {
-            practicFormPage
+            practiceFormPage
                     .setFirstName(firstName)
                     .setLastName(lastName)
                     .setUserEmail(userEmail)
@@ -58,11 +57,11 @@ public class PracticeFormWithPageObjectDataGenerationTests extends BaseTest {
                     .setStateAndCity(state, city);
         });
         step("Отправка формы", () -> {
-            practicFormPage
+            practiceFormPage
                     .submit();
         });
         step("Проверка", () -> {
-            practicFormPage
+            practiceFormPage
                     .checkModalDialogeTitle("Thanks for submitting the form")
                     .checkResult(List.of(firstName, lastName,
                             userEmail, userNumber, gender,
