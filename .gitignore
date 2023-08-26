@@ -18,6 +18,8 @@ out/
 !**/src/test/**/out/
 gradlew.bat
 gradlew
+gradle/wrapper
+settings.gradle
 
 ### Eclipse ###
 .apt_generated
