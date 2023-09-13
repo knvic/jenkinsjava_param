@@ -1,16 +1,31 @@
 plugins {
     id 'java'
+    id 'io.qameta.allure' version '2.11.2'
 }
 
 group 'guru.qa'
 version '1.0-SNAPSHOT'
+
+allure {
+    report {
+        version.set("2.24.0")
+    }
+    adapter { // отвечает за появление папочки build/allure-results
+        aspectjWeaver.set(true) //обработка аннотации @Step
+        frameworks {
+            junit5 { //название фреймворка
+                adapterVersion.set("2.24.0") //версия интеграции фреймворка и Allure
+            }
+        }
+    }
+}
 
 repositories {
     mavenCentral()
 }
 
 ext {
-    junitVersion = '5.9.2'
+    junitVersion = '5.10.0'
 }
 
 sourceCompatibility = '17'
@@ -21,7 +36,10 @@ tasks.withType(JavaCompile) {
 }
 
 dependencies {
+    testImplementation('org.seleniumhq.selenium:selenium-java:4.12.1')
     testImplementation('com.codeborne:selenide:6.16.1')
+    implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.24.0'
+
     testImplementation('org.slf4j:slf4j-simple:2.0.5')
 
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
@@ -34,4 +52,5 @@ dependencies {
 
 test {
     useJUnitPlatform()
+    systemProperties(System.getProperties())
 }
