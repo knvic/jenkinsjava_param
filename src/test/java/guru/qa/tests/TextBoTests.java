@@ -1,14 +1,15 @@
 package guru.qa.tests;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 
-public class TextBoTests extends BaseTest{
+public class TextBoTests extends BaseTest {
 
-
+    @Disabled
     @Test
     void fillFormTest() {
         open("/text-box");

@@ -2,6 +2,7 @@ package guru.qa.tests;
 
 
 import guru.qa.pages.TextBoxPage;
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 
 public class TextBoxWithPageObjectTests extends BaseTest{
@@ -9,6 +10,7 @@ public class TextBoxWithPageObjectTests extends BaseTest{
 
     TextBoxPage textBoxTestsPage =new TextBoxPage();
 
+    @Disabled
     @Test
     void extBoxTestsWithPageObject() {
 

@@ -1,6 +1,9 @@
 package guru.qa.tests;
 
 import guru.qa.pages.PracticeFormPage;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.DisplayName;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -11,6 +14,13 @@ import static com.codeborne.selenide.logevents.SelenideLogger.step;
 public class PracticeFormWithPageObjectTests extends BaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
+    @Feature("Запуск в Jenkins")
+    @Story("Заполнение тестовой формы вариант 2")
+    @Owner("krivorotovnv")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value = "Testing", url = "https://github.com")
+    @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
+    @Tag("Jenkins")
     @Test
     void fullTestPracticeForm() {
         step("Open", () -> {

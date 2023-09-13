@@ -1,19 +1,23 @@
 package guru.qa.tests;
 
 import com.codeborne.selenide.Condition;
-import org.junit.jupiter.api.BeforeAll;
-import org.junit.jupiter.api.Test;
+import io.qameta.allure.*;
+import org.junit.jupiter.api.*;
+
 import static com.codeborne.selenide.Condition.text;
 import static com.codeborne.selenide.Selectors.byText;
 import static com.codeborne.selenide.Selenide.*;
 
 public class PracticeFormTests extends BaseTest{
 
-    @BeforeAll
-    public static void setUpAll() {
-        //-Dwdm.chromeDriverVersion=114.0.5735.90
 
-    }
+    @Feature("Запуск в Jenkins")
+    @Story("Заполнение тестовой формы")
+    @Owner("krivorotovnv")
+    @Severity(SeverityLevel.BLOCKER)
+    @Link(value = "Testing", url = "https://github.com")
+    @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
+    @Tag("Jenkins")
     @Test
     void txtForm() {
         open("/automation-practice-form");
