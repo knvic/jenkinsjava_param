@@ -1,7 +1,8 @@
 package guru.qa.utils;
 
 
-import net.datafaker.Faker;
+
+import com.github.javafaker.Faker;
 
 import java.text.SimpleDateFormat;
 import java.util.*;

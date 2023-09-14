@@ -18,7 +18,6 @@ public class RemoteBaseTest {
 
     @BeforeAll
     static void beforeAll() {
-        SelenideLogger.addListener("Allure", new AllureSelenide());
         System.setProperty("selenide.browser", "Chrome");
         Configuration.baseUrl = "https://demoqa.com";
         Configuration.browserSize = "1920x1800";

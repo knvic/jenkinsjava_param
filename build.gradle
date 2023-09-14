@@ -40,12 +40,12 @@ dependencies {
     implementation group: 'io.qameta.allure', name: 'allure-selenide', version: '2.24.0'
 
     testImplementation('org.slf4j:slf4j-simple:2.0.5')
-
+    testImplementation('com.github.javafaker:javafaker:1.0.2')
     testImplementation("org.junit.jupiter:junit-jupiter-api:${junitVersion}")
     testRuntimeOnly("org.junit.jupiter:junit-jupiter-engine: ${junitVersion}")
 
 
-    implementation group: 'net.datafaker', name: 'datafaker', version: '2.0.1'
+    //implementation group: 'net.datafaker', name: 'datafaker', version: '1.0.2'
 
 }
 
