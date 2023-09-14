@@ -23,7 +23,7 @@ public class PracticeFormWithPageObjectDataGenerationTests extends BaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://github.com")
     @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
-    @Tag("Jenkins")
+    @Tag("remote")
     void fullTestPracticeForm() {
 
         String
