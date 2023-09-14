@@ -13,7 +13,7 @@ import java.util.List;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 
-public class PracticeFormWithPageObjectDataGenerationTests extends BaseTest {
+public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTest{
     PracticeFormPage practiceFormPage = new PracticeFormPage();
     DataGenerationUtils dataGenerationUtils = new DataGenerationUtils();
     @Test
