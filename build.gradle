@@ -54,8 +54,27 @@ test {
     systemProperties(System.getProperties())
 }
 
-task run_jenkins(type: Test){
-    useJUnitPlatform{
-        includeTags("Jenkins")
+task run_jenkins(type: Test) {
+    useJUnitPlatform {
+        includeTags("remote")
+    }
+
+    task simple_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("simple")
+        }
+    }
+
+
+    task property_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("property")
+        }
+    }
+
+    task hello_test(type: Test) {
+        useJUnitPlatform {
+            includeTags("hello")
+        }
     }
 }
