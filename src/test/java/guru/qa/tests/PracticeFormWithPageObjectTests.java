@@ -15,12 +15,12 @@ public class PracticeFormWithPageObjectTests extends BaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @Feature("Запуск в Jenkins")
-    @Story("Заполнение тестовой формы вариант 2")
+    @Story("Заполнение тестовой формы без генерации данных")
     @Owner("krivorotovnv")
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://github.com")
     @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
-    @Tag("local")
+    @Tag("smoke")
     @Test
     void fullTestPracticeForm() {
         step("Open", () -> {
