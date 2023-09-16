@@ -29,7 +29,6 @@ ext {
 }
 
 
-
 tasks.withType(JavaCompile) {
     options.encoding = 'UTF-8'
 }
@@ -58,18 +57,18 @@ task run_jenkins_remote(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
     }
+}
 
-    task run_jenkins_smoke(type: Test) {
-        useJUnitPlatform {
-            includeTags("smoke")
-        }
-
-    task simple_test(type: Test) {
-        useJUnitPlatform {
-            includeTags("local")
-        }
+task run_jenkins_smoke(type: Test) {
+    useJUnitPlatform {
+        includeTags("smoke")
     }
-
+}
+task simple_test(type: Test) {
+    useJUnitPlatform {
+        includeTags("local")
+    }
+}
 
     task property_test(type: Test) {
         useJUnitPlatform {
@@ -82,4 +81,4 @@ task run_jenkins_remote(type: Test) {
             includeTags("hello")
         }
     }
-}
+
