@@ -35,8 +35,7 @@ public class PracticeFormPage {
 
 
     public PracticeFormPage openPage(String pageName) {
-        open("/automation-practice-form");
-       // open("/"+pageName);
+        open("/"+pageName);
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
