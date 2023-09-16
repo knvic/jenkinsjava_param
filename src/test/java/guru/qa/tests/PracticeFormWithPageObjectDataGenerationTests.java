@@ -2,6 +2,9 @@ package guru.qa.tests;
 
 import guru.qa.pages.PracticeFormPage;
 import guru.qa.utils.DataGenerationUtils;
+
+import static io.qameta.allure.Allure.step;
+
 import io.qameta.allure.*;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Tag;
@@ -9,13 +12,10 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-
-import static com.codeborne.selenide.logevents.SelenideLogger.step;
-
-
-public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTest{
+public class PracticeFormWithPageObjectDataGenerationTests extends RemoteBaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
     DataGenerationUtils dataGenerationUtils = new DataGenerationUtils();
+
     @Test
     @Feature("Запуск в Jenkins")
     @Story("Заполнение тестовой формы вариант с Faker")
