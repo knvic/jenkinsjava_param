@@ -20,14 +20,15 @@ public class RemoteBaseTest {
     static void beforeAll() {
        // System.setProperty("selenide.browser", "Chrome");
         Configuration.baseUrl = "https://demoqa.com";
-        Configuration.browserSize = System.getProperty("browserRes");
-        Configuration.browser = System.getProperty("browser", "chrome");
-        Configuration.browserVersion = System.getProperty("browserVersion");
+       // Configuration.browserSize = System.getProperty("browserRes");
+       // Configuration.browser = System.getProperty("browser", "chrome");
+        //Configuration.browserVersion = System.getProperty("browserVersion");
 
 
 
         Configuration.pageLoadStrategy = "eager";
-        Configuration.remote = "https://user1:1234@"+System.getProperty("selenoidUI", "selenoid.autotests.cloud")+"/wd/hub";
+        //Configuration.remote = "https://user1:1234@"+System.getProperty("selenoidUI", "selenoid.autotests.cloud")+"/wd/hub";
+        Configuration.remote = "https://user1:1234@selenoid.autotests.cloud/wd/hub";
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("selenoid:options", Map.<String, Object>of(
                 "enableVNC", true,

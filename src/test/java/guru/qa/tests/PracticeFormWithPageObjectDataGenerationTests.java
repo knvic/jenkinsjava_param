@@ -45,13 +45,15 @@ public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTe
 
         step("Открытие формы, удаление банера и футера", () -> {
             practiceFormPage
-                    .openPage(System.getProperty("pagename"))
+                    //.openPage(System.getProperty("pagename"))
+                    .openPage("/automation-practice-form")
                     .deleteBannerAndFooter();
         });
 
         step("Заполнение формы", () -> {
             practiceFormPage
-                    .setFirstName(firstName)
+                    //.setFirstName(firstName)
+                    .setFirstName("firstName")
                     .setLastName(lastName)
                     .setUserEmail(userEmail)
                     .setUserNumber(userNumber)
