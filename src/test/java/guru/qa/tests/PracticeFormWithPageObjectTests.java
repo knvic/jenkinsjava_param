@@ -11,7 +11,7 @@ import java.util.List;
 import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
-public class PracticeFormWithPageObjectTests extends RemoteBaseTest {
+public class PracticeFormWithPageObjectTests extends BaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @Feature("Запуск в Jenkins")
@@ -20,7 +20,7 @@ public class PracticeFormWithPageObjectTests extends RemoteBaseTest {
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://github.com")
     @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
-    @Tag("remote")
+    @Tag("local")
     @Test
     void fullTestPracticeForm() {
         step("Open", () -> {
