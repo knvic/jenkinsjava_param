@@ -61,7 +61,7 @@ tasks.withType(Test) {
     }
 }
 
-task run_jenkins_remote(type: Test) {
+task run_jenkins_remote_param(type: Test) {
     useJUnitPlatform {
         includeTags("remote")
     }
