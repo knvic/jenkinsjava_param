@@ -45,7 +45,7 @@ public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTe
 
         step("Открытие формы, удаление банера и футера", () -> {
             practiceFormPage
-                    .openPage()
+                    .openPage(System.getProperty("pagename"))
                     .deleteBannerAndFooter();
         });
 

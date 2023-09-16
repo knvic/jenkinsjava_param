@@ -8,7 +8,6 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class PracticeFormWithPageObjectTests extends RemoteBaseTest {
@@ -25,7 +24,7 @@ public class PracticeFormWithPageObjectTests extends RemoteBaseTest {
     void fullTestPracticeForm() {
         step("Open", () -> {
             practiceFormPage
-                    .openPage()
+                    .openPage(System.getProperty("pagename"))
                     .deleteBannerAndFooter();
         });
 
