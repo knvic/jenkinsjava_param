@@ -20,7 +20,7 @@ public class RemoteBaseTest {
     static void beforeAll() {
        // System.setProperty("selenide.browser", "Chrome");
         Configuration.baseUrl = "https://demoqa.com";
-       // Configuration.browserSize = System.getProperty("browserRes");
+        Configuration.browserSize = System.getProperty("browserRes");
         Configuration.browser = System.getProperty("browser", "chrome");
         Configuration.browserVersion = System.getProperty("browserVersion");
 
