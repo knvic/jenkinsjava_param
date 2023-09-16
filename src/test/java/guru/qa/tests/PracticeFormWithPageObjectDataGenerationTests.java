@@ -18,7 +18,7 @@ public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTe
     DataGenerationUtils dataGenerationUtils = new DataGenerationUtils();
     @Test
     @Feature("Запуск в Jenkins")
-    @Story("Заполнение тестовой формы вариант 1")
+    @Story("Заполнение тестовой формы вариант с Faker")
     @Owner("krivorotovnv")
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://github.com")
@@ -45,7 +45,7 @@ public class PracticeFormWithPageObjectDataGenerationTests extends  RemoteBaseTe
 
         step("Открытие формы, удаление банера и футера", () -> {
             practiceFormPage
-                    .openPage()
+                    .openPage(System.getProperty("pagename"))
                     .deleteBannerAndFooter();
         });
 

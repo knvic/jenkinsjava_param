@@ -8,24 +8,23 @@ import org.junit.jupiter.api.Test;
 
 import java.util.List;
 
-import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.logevents.SelenideLogger.step;
 
 public class PracticeFormWithPageObjectTests extends RemoteBaseTest {
     PracticeFormPage practiceFormPage = new PracticeFormPage();
 
     @Feature("Запуск в Jenkins")
-    @Story("Заполнение тестовой формы вариант 2")
+    @Story("Заполнение тестовой формы без генерации данных")
     @Owner("krivorotovnv")
     @Severity(SeverityLevel.BLOCKER)
     @Link(value = "Testing", url = "https://github.com")
     @DisplayName("Запуск проекта заполнения формы с использованием Jenkins")
-    @Tag("remote")
+    @Tag("smoke")
     @Test
     void fullTestPracticeForm() {
         step("Open", () -> {
             practiceFormPage
-                    .openPage()
+                    .openPage(System.getProperty("pagename"))
                     .deleteBannerAndFooter();
         });
 

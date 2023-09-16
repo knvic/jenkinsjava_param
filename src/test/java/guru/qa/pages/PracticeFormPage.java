@@ -14,7 +14,7 @@ import static com.codeborne.selenide.Selenide.*;
 public class PracticeFormPage {
 
     CalendarComponent calendar = new CalendarComponent();
-    ResultTableComponent resultTableComponent=new ResultTableComponent();
+    ResultTableComponent resultTableComponent = new ResultTableComponent();
     SelenideElement
             firstName = $("#firstName"),
             lastName = $("#lastName"),
@@ -34,9 +34,9 @@ public class PracticeFormPage {
             checkTitle = $("#example-modal-sizes-title-lg");
 
 
-
-    public PracticeFormPage openPage() {
-               open("/automation-practice-form");
+    public PracticeFormPage openPage(String pageName) {
+       // open("/automation-practice-form");
+        open("/"+pageName);
         executeJavaScript("$('#fixedban').remove()");
         executeJavaScript("$('footer').remove()");
         return this;
@@ -62,7 +62,7 @@ public class PracticeFormPage {
         return this;
     }
 
-        public PracticeFormPage setUserNumber(String value) {
+    public PracticeFormPage setUserNumber(String value) {
         userNumber.setValue(value);
         return this;
     }
